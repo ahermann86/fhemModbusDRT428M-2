@@ -13,6 +13,10 @@ Grundsätzlich kann der Zähler per RS485 Adapter an einen Server angeschlossen 
 1. Datei in FHEM hinein kopieren und laden. Wie z.B. https://wiki.fhem.de/wiki/Rotex_HPSU_Compact#Dateien
 2. In FHEM Modbus Schnittstelle definieren. 
 - `define ModBusLine Modbus /dev/ttyUSB2@38400,8,N,2`
+
+**Achtung**: Der Zähler erwartet in der Kommunikationseinstellung **2 Stopbits**, sonst gibt er keine Antwort -> https://forum.iobroker.net/post/788941
+
+
 3. In FHEM Modbus Zähler Device mit dem Modul definieren:
 - `define DRT_Wohnung ModbusSDM72DM 1 5`
 - `attr DRT_Wohnung IODev ModBusLine`
