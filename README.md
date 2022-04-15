@@ -18,13 +18,14 @@ Grundsätzlich kann der Zähler per RS485 Adapter an einen Server angeschlossen 
 
 
 3. In FHEM Modbus Zähler Device mit dem Modul definieren:
-- `define DRT_Wohnung ModbusSDM72DM 1 5`
+- `define DRT_Wohnung ModbusDRT428M 1 5`
 - `attr DRT_Wohnung IODev ModBusLine`
 - `attr DRT_Wohnung event-on-change-reading Energy_total__kWh.*:0.5,Power_Sum__W:5,.*`
 
-##### Modul Raw definition:
+##### Definition als Raw definition:
 ```
-defmod DRT_Wohnung ModbusSDM72DM 1 5
+defmod DRT_Wohnung ModbusDRT428M 1 5
+attr DRT_Wohnung IODev ModBusLine
 attr DRT_Wohnung event-on-change-reading uRVerbrauch:0.05,.*
 attr DRT_Wohnung room Haus
 attr DRT_Wohnung stateFormat Verbrauch Total_Active_Power TVerbrauch uRTVerbrauch
